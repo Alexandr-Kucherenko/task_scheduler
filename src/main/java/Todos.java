@@ -31,7 +31,23 @@ public class Todos {
         return tasks;
     }
 
-    public boolean matches(String query) {
-        return false;
+    //public boolean matches(String query) {
+    //   return false;
+    // }
+
+    /**
+     * Метод поиска задач, которые подходят под поисковый запрос
+     *
+     * @param query Поисковый запрос
+     * @return Массив из подошедших задач
+     */
+    public Task[] search(String query) {
+        Task[] result = new Task[0]; // массив для ответа
+        for (Task task : tasks) { // перебираем все задачи
+            if (task.matches(query)) { // если задача подходит под запрос
+                result = addToArray(result, task); // добавляем её в массив ответа
+            }
+        }
+        return result;
     }
 }

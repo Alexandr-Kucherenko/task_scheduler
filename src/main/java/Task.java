@@ -15,6 +15,7 @@ public abstract class Task {
     // Ниже находятся вспомогательные методы для корректной работы equals
     // Переопределять их в наследниках не нужно
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -28,10 +29,10 @@ public abstract class Task {
         return Objects.hash(id);
     }
 
-
     public boolean matches(String query) {
         return false;
     }
 
 
 }
+

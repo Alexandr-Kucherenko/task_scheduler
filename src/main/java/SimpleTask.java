@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class SimpleTask extends Task {
     protected String title;
 
@@ -6,16 +8,13 @@ public class SimpleTask extends Task {
         this.title = title; // заполнение своих полей
     }
 
-    @Override
-    public boolean matches(String query) {
-        if (title.contains(query)) {
-            return true;
-        }
-
-        return false;
-    }
-
     public String getTitle() {
         return title;
     }
+
+    @Override
+    public boolean matches(String query) {
+        return title.contains(query);
+    }
 }
+
